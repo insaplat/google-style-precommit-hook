@@ -4,7 +4,7 @@ cd .cache
 if [ ! -f google-java-format-1.11.0-all-deps.jar ]
 then
     curl -LJO "https://github.com/google/google-java-format/releases/download/v1.11.0/google-java-format-1.11.0-all-deps.jar"
-    chmod 755 google-java-format-1.9-all-deps.jar
+    chmod 755 google-java-format-1.11.0-all-deps.jar
 fi
 cd ..
 

@@ -10,4 +10,9 @@ cd ..
 
 changed_java_files=$(git diff --cached --name-only --diff-filter=ACMR | grep ".*java$" )
 echo $changed_java_files
-java -jar .cache/google-java-format-1.11.0-all-deps.jar --replace $changed_java_files
+java \
+  --add-exports jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED \
+  --add-exports jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED \
+  --add-exports jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED \
+  --add-exports jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED \
+  --add-exports jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED \ -jar .cache/google-java-format-1.11.0-all-deps.jar --replace $changed_java_files
